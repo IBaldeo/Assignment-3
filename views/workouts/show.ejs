@@ -1,0 +1,17 @@
+<%- include('../layouts/header') %>
+<div class="container">
+  <h1><%= workout.title %></h1>
+   <!-- All information of a single workout -->
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Date:</strong> <%= workout.date.toDateString() %></li>
+    <li class="list-group-item"><strong>Type of Workout:</strong> <%= workout.type %></li>
+    <li class="list-group-item"><strong>Duration:</strong> <%= workout.durationMin %> minutes</li>
+    <li class="list-group-item"><strong>Calories burned:</strong> <%= workout.calories %></li>
+    <li class="list-group-item"><strong>Notes:</strong> <%= workout.notes || '—' %></li>
+  </ul>
+  <div class="mt-3">
+    <a class="btn btn-secondary" href="/workouts">Back</a>
+    <a class="btn btn-primary" href="/workouts/<%= workout._id %>/edit">Edit</a>
+  </div>
+</div>
+<%- include('../layouts/footer') %>
